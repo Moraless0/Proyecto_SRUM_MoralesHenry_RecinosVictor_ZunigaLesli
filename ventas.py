@@ -67,3 +67,12 @@ def registrar():
     data.append(orden)
     guardar(data)
     print(f"✅ Orden registrada. Total: Q{total}")
+
+def listar():
+    data = cargar()
+    print("\n=== Órdenes de Venta ===")
+    if not data:
+        print("No hay registros.")
+        return
+    for o in data:
+        print(f"{o['codigo']} - Cliente: {o['cliente']} - Total: Q{o['total']} - Estado: {o['estado']}")
