@@ -18,3 +18,24 @@ def registrar():
         if unique_code(codigo, data, "codigo"):
             break
         print("⚠ Código repetido.")
+
+    empresa = non_empty("Empresa: ")
+    contacto = non_empty("Contacto: ")
+    direccion = non_empty("Dirección: ")
+    tel_cel = phone("Teléfono celular: ")
+    tel_fijo = phone("Teléfono fijo: ")
+    correo = email("Correo: ")
+
+    item = {
+        "codigo": codigo,
+        "empresa": empresa,
+        "contacto": contacto,
+        "direccion": direccion,
+        "tel_cel": tel_cel,
+        "tel_fijo": tel_fijo,
+        "correo": correo
+    }
+
+    data.append(item)
+    guardar(data)
+    print("✅ Registrado.")
