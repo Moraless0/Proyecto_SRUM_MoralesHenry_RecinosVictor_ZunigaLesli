@@ -37,3 +37,12 @@ def registrar():
     data.append(item)
     guardar(data)
     print("✅ Registrado.")
+
+def listar():
+    data = cargar()
+    print("\n=== Materias Primas ===")
+    if not data:
+        print("No hay registros.")
+        return
+    for m in data:
+        print(f"{m['codigo']} - {m['nombre']} (Stock: {m['stock']})")
