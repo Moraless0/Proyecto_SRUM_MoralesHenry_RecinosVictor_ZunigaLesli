@@ -39,3 +39,12 @@ def registrar():
     data.append(item)
     guardar(data)
     print("✅ Registrado.")
+
+def listar():
+    data = cargar()
+    print("\n=== Clientes ===")
+    if not data:
+        print("No hay registros.")
+        return
+    for c in data:
+        print(f"{c['codigo']} - {c['empresa']}")
