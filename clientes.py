@@ -8,3 +8,13 @@ def cargar():
 
 def guardar(data):
     save_json(FILE, data)
+    
+def registrar():
+    data = cargar()
+    print("\n=== Registrar Cliente ===")
+
+    while True:
+        codigo = non_empty("Código: ")
+        if unique_code(codigo, data, "codigo"):
+            break
+        print("⚠ Código repetido.")
