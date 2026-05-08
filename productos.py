@@ -12,3 +12,23 @@ def guardar(data):
 def registrar():
     data = cargar()
     print("\n=== Registrar Producto Final ===")
+
+
+    while True:
+        codigo = non_empty("Código: ")
+        if unique_code(codigo, data, "codigo"):
+            break
+        print("⚠ Código repetido.")
+
+    nombre = non_empty("Nombre: ")
+    descripcion = non_empty("Descripción: ")
+    precio = non_negative_float("Precio de venta: ")
+    stock = positive_int("Stock inicial: ")
+
+    item = {
+        "codigo": codigo,
+        "nombre": nombre,
+        "descripcion": descripcion,
+        "precio": precio,
+        "stock": stock
+    }
