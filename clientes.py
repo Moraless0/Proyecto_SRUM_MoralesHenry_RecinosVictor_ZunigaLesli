@@ -8,7 +8,7 @@ def cargar():
 
 def guardar(data):
     save_json(FILE, data)
-    
+
 def registrar():
     data = cargar()
     print("\n=== Registrar Cliente ===")
